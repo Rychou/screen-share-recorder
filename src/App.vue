@@ -32,7 +32,7 @@
     </div>
     <a class="feedback"
        href="https://github.com/Rychou/screen-share-recorder/issues"
-       title="click to feedback">feedback on github issues</a>
+       title="feedback on github issues">feedback</a>
   </div>
 </template>
 
@@ -192,7 +192,14 @@ video {
 
 .feedback {
   position: absolute;
-  right: 24px;
-  top: 24px;
+  right: -123px;
+  top: 20px;
+  width: 300px;
+  padding: 4px 8px;
+  font-weight: bold;
+  background: aquamarine;
+  color: black;
+  transform: rotate(45deg);
+  text-decoration: none;
 }
 </style>
