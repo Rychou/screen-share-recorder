@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <div class="record">
+    <div class="record"
+         v-if="isSupported">
       <h2>Record</h2>
       <span class="rec"
             v-show="showREC">REC</span>
@@ -19,19 +20,25 @@
                 @click="stop">stop</button>
       </div>
     </div>
+    <h2 v-else>Sorry! Your browser is not fully support WebRTC! Please install latest Chrome on your computer and try this page again.</h2>
     <div class="preview"
          v-if="!!blobUrl">
       <h2>Preview</h2>
       <video :src="blobUrl"
              autoplay
              controls></video>
-      <button @click="handleDownload" class="download-button">download</button>
+      <button @click="handleDownload"
+              class="download-button">download</button>
     </div>
+    <a class="feedback"
+       href="https://github.com/Rychou/screen-share-recorder/issues"
+       title="click to feedback">feedback on github issues</a>
   </div>
 </template>
 
 <script>
 import { RECORD_STATUS_UNSTART, RECORD_STATUS_RECORDING, RECORD_STATUS_PAUSED, RECORD_STATUS_STOPPED } from './utils/const';
+import { isScreenShareSupported, isWebRTCSupported } from './utils/index';
 
 export default {
   name: 'App',
@@ -55,6 +62,9 @@ export default {
   computed: {
     showREC () {
       return this.status === RECORD_STATUS_RECORDING;
+    },
+    isSupported () {
+      return isScreenShareSupported() && isWebRTCSupported();
     }
   },
   mounted () {
@@ -178,5 +188,11 @@ video {
 .download-button {
   display: block;
   margin: 0 auto;
+}
+
+.feedback {
+  position: absolute;
+  right: 24px;
+  top: 24px;
 }
 </style>
