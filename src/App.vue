@@ -20,7 +20,7 @@
                 @click="stop">stop</button>
       </div>
     </div>
-    <h2 v-else>Sorry! Your browser is not fully support WebRTC! Please install latest Chrome on your computer and try this page again.</h2>
+    <h2 v-else>Sorry! WebRTC is not fully supported on your browser! Please install latest Chrome on your computer and try this page again.</h2>
     <div class="preview"
          v-if="!!blobUrl">
       <h2>Preview</h2>
