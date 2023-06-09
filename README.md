@@ -4,7 +4,7 @@
 >
 > 最近在学 WebRTC，用来做毕设，于是催生了制作该录屏工具的想法。
 
-基于 WebRTC 和 Vue 实现的 Web 端录屏工具，支持屏幕分享+音频录制，并导出为 mp4 文件，预览地址：[https://recorder.rychou.club](https://rychou.github.io/screen-share-recorder/dist/index.html)
+基于 WebRTC 和 Vue 实现的 Web 端录屏工具，支持屏幕分享+音频录制，并导出为 mp4 文件，预览地址：https://rychou.github.io/screen-share-recorder/dist/index.html
 
 ## 项目启动步骤
 
